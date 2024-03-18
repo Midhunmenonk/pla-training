@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/register.css"> <!-- Your custom styles file for register.html -->
+    <title>Register - Placement Training App</title>
+</head>
+
+<body class="bg-light">
+    <form method="post" action="/register/">
+        {% csrf_token %}
+    <div class="container mt-5">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header bg-success text-white text-center">
+                <h4>Register</h4>
+            </div>
+            <div class="card-body">
+
+                <!-- Registration Form -->
+                <form>
+                    <div class="form-group">
+                        <label for="registerNumber">Register Number</label>
+                        <input type="text" class="form-control" id="registerNumber" name = "registerNumber" placeholder="Enter Register Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name = "password" id="password" placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Select User Type</label>
+                        <select class="form-control" id="userType" name = userType>
+                            <option value="faculty">Faculty</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                </form>
+
+                <!-- Login Link -->
+                <div class="text-center mt-3">
+                    <p class="mb-0">Already registered? <a href="{% url 'login' %}">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
