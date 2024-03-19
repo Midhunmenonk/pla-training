@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Bar Graph</title>
+    <link rel="stylesheet" href="home2.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/percentage.css' %}">
+</head>
+<body>
+	<h1>MY PERFORMANCE</h1>
+<div class="simple-bar-chart">
+  
+  <div class="item" style="--clr: #5EB344; --val: 80">
+    <div class="label">test 1</div>
+    <div class="value">80%</div>
+  </div>
+  
+  <div class="item" style="--clr: #FCB72A; --val: 50">
+    <div class="label">test 2</div>
+    <div class="value">50%</div>
+  </div>
+  
+  <div class="item" style="--clr: #F8821A; --val: 100">
+    <div class="label">test 3</div>
+    <div class="value">100%</div>
+  </div>
+  
+  <div class="item" style="--clr: #E0393E; --val: 15">
+    <div class="label">test 4</div>
+    <div class="value">15%</div>
+  </div>
+  
+  <div class="item" style="--clr: #963D97; --val: 1">
+    <div class="label">test5</div>
+    <div class="value">1%</div>
+  </div>
+  
+  <div class="item" style="--clr: #069CDB; --val: 90">
+    <div class="label">test 6</div>
+    <div class="value">90%</div>
+  </div>
+</div>
+
+
+<div class="sidebar">
+  <div class="logo-details">
+    <i class='CCE Complete Logo (Light) 1 (1).png'></i>
+      <div class="logo_name">menu</div>
+      <i class='bx bx-menu' id="btn" ></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+        <i class='bx bx-search' ></i>
+       <input type="text" placeholder="Search...">
+       <span class="tooltip">Search</span>
+    </li>
+    <li>
+      <a href="index.html">
+        <i class='bx bx-home'></i>
+        <span class="links_name">home</span>
+      </a>
+       <span class="tooltip">home</span>
+    </li>
+    <li>
+     <a href="login.html">
+       <i class='bx bx-user' ></i>
+       <span class="links_name">login</span>
+     </a>
+     <span class="tooltip">login</span>
+   </li>
+   <li>
+     <a href="#">
+       <i class='bx bx-chat' ></i>
+       <span class="links_name">notifications</span>
+     </a>
+     <span class="tooltip">notifications</span>
+   </li>
+   <li>
+    
+     <a href="#">
+       <i class='bx bx-pie-chart-alt-2' ></i>
+       <span class="links_name">my performance</span>
+     </a>
+     <span class="tooltip">my performance</span>
+   </li>
+   <li>
+     <a href="#">
+       <i class='bx bx-folder' ></i>
+       <span class="links_name">training</span>
+     </a>
+     <span class="tooltip">training </span>
+   </li>
+   <li>
+     <a href="#">
+       <i class='bx bx-check-square' ></i>
+       <span class="links_name">feedback</span>
+     </a>
+     <span class="tooltip">feedback</span>
+   </li>
+   <li>
+     <a href="#">
+       <i class='bx bx-calendar-event' ></i>
+       <span class="links_name">calender</span>
+     </a>
+     <span class="tooltip">calender</span>
+   </li>
+   <li>
+     <a href="#">
+       <i class='bx bx-check-square' ></i>
+       <span class="links_name">test</span>
+     </a>
+     <span class="tooltip">test</span>
+   </li>
+   <li class="profile">
+       <div class="profile-details">
+         <img src="pic.jpg" alt="profileImg">
+         <div class="name_job">
+           <div class="name">krish</div>
+           <div class="job">student</div>
+         </div>
+       </div>
+       <i class='bx bx-log-out' id="log_out" ></i>
+   </li>
+  </ul>
+</div>
+
+<script>
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+ }
+}
+</script>
+<section class="hero-section set-bg" data-setbg="img/bg.jpg">
+  <div class="container">
+    <div class="hero-text text-white">
+     
+    </div>
+    
+  
+</section>
+<!-- Hero section end -->
+
+
+</body>
+</html>
