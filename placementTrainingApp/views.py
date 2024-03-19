@@ -37,10 +37,10 @@ def login(request):
             request.session['registerNumber'] = reg_no
             return render(request, 'profile.html')
         else:
-            return render(request, 'login.html', {'error_message': 'Invalid credentials'})
+            return render(request, 'index.html', {'error_message': 'Invalid credentials'})
 
     else:
-        return render(request, 'login.html')
+        return render(request, 'index.html')
             
             
 def profile(request):

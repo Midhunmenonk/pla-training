@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/placementTrainingApp/static/assets/css/styles.css">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 <body>
     <div >
         <div id="half1">
             <h1 class="heading1" >PLACEMENT</h1>
-            <img src="/placementTrainingApp/static/assets/images/images/kid.png" id="kid">
+            <img src="{% static 'assets/images/images/kid.png' %}" id="kid">
         </div>
         <div id="half2">
             <h1 class="heading2">TRAINING</h1>
@@ -25,13 +25,13 @@
                 </a> -->
 
                 <button id="student" class="button button1"> 
-                    <img src="/placementTrainingApp/static/assets/images/images/studentwhite.png" class="img_icon" id="img_student">
+                    <img src="{% static 'assets/images/images/studentwhite.png' %}" class="img_icon" id="img_student">
                 </button>
                 <button id="faculty" class="button button2"> 
-                    <img src="/placementTrainingApp/static/assets/images/images/faculty blue.png" class="img_icon" id="img_faculty">
+                    <img src="{% static 'assets/images/images/faculty blue.png' %}" class="img_icon" id="img_faculty">
                 </button>
             </div>
-            <img src="/placementTrainingApp/static/assets/images/images/CCE logo.png"  id="logo">
+            <img src="{% static 'assets/images/images/CCE logo.png' %}"  id="logo">
             <div class="form_box">
                 <h1 style="text-align: left; margin-left: 30px;">Login</h1>
                 <form class="form" method="post" action="{% url 'login' %}">
