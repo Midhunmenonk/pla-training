@@ -50,7 +50,7 @@ def attend(request):
      return render(request, 'attend.html')
 
 def calendar(request):
-     return render(request, 'celander.html')  
+     return render(request, 'calendar.html')  
 
 def feedback(request):
      return render(request, 'feedback.html')   

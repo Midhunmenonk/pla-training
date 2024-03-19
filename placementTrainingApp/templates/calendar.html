@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -10,7 +9,7 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Calendar JavaScript | CodingNepal</title>
+    <title>Calendar</title>
     <link rel="stylesheet" href="{% static 'assets/css/calender.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Font Link for Icons -->
@@ -18,6 +17,10 @@
     <script src="{% static 'assets/js/calender.js' %}" defer></script>
   </head>
   <body>
+    <div >
+      <h1 class="head">Schedule</h1>
+    </div>
+    
     <div class="wrapper">
       <header>
         <p class="current-date"></p>
@@ -44,7 +47,7 @@
     <div class="sidebar">
         <div class="logo-details">
           <i class='CCE Complete Logo (Light) 1 (1).png'></i>
-            <div class="logo_name">menu</div>
+            <div class="logo_name">Dashboard</div>
             <i class='bx bx-menu' id="btn" ></i>
         </div>
         <ul class="nav-list">
@@ -54,61 +57,61 @@
              <span class="tooltip">Search</span>
           </li>
           <li>
-            <a href="index.html">
+            <a href="profile.html">
               <i class='bx bx-home'></i>
-              <span class="links_name">home</span>
+              <span class="links_name">Home</span>
             </a>
-             <span class="tooltip">home</span>
+             <span class="tooltip">Home</span>
           </li>
           <li>
-           <a href="login.html">
+           <a href={% url 'attend' %}>
              <i class='bx bx-user' ></i>
-             <span class="links_name">login</span>
+             <span class="links_name">Attendance</span>
            </a>
-           <span class="tooltip">login</span>
+           <span class="tooltip">Attendance</span>
          </li>
          <li>
            <a href="#">
              <i class='bx bx-chat' ></i>
-             <span class="links_name">notifications</span>
+             <span class="links_name">Notifications</span>
            </a>
-           <span class="tooltip">notifications</span>
+           <span class="tooltip">Notifications</span>
          </li>
          <li>
           
-           <a href="#">
+           <a href="{% url 'percentage' %}">
              <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">my performance</span>
+             <span class="links_name">My Performance</span>
            </a>
-           <span class="tooltip">my performance</span>
+           <span class="tooltip">My Performance</span>
          </li>
          <li>
            <a href="#">
              <i class='bx bx-folder' ></i>
-             <span class="links_name">training</span>
+             <span class="links_name">Training</span>
            </a>
-           <span class="tooltip">training </span>
+           <span class="tooltip">Training </span>
          </li>
          <li>
            <a href="#">
              <i class='bx bx-check-square' ></i>
-             <span class="links_name">feedback</span>
+             <span class="links_name">Feedback</span>
            </a>
-           <span class="tooltip">feedback</span>
+           <span class="tooltip">Feedback</span>
          </li>
          <li>
            <a href="#">
              <i class='bx bx-calendar-event' ></i>
-             <span class="links_name">calender</span>
+             <span class="links_name">Calender</span>
            </a>
-           <span class="tooltip">calender</span>
+           <span class="tooltip">Calender</span>
          </li>
          <li>
            <a href="#">
              <i class='bx bx-check-square' ></i>
-             <span class="links_name">test</span>
+             <span class="links_name">Test</span>
            </a>
-           <span class="tooltip">test</span>
+           <span class="tooltip">Test</span>
          </li>
          <li class="profile">
              <div class="profile-details">
@@ -122,6 +125,7 @@
          </li>
         </ul>
       </div>
+
       
       <script>
       let sidebar = document.querySelector(".sidebar");
