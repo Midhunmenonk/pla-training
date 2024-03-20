@@ -1,110 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #8b0597; /* Purple background color */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: center;
-        }
-
-        .login-container h2 {
-            color: #8A2BE2; /* Purple text color */
-        }
-
-        .login-form {
-            margin-top: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-group .button-group {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .form-group button {
-            width: 48%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .faculty-button {
-            background-color: #970384; /* Gold color for Faculty button */
-            
-        }
-
-        .student-button {
-            background-color: #900a71; /* Green color for Student button */
-            
-        }
-        
-    </style>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 <body>
+    <div >
+        <div id="half1">
+            <h1 class="heading1" >PLACEMENT</h1>
+            <img src="{% static 'assets/images/images/kid.png' %}" id="kid">
+        </div>
+        <div id="half2">
+            <h1 class="heading2">TRAINING</h1>
+            <div>
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form method="post" action="{% url 'login' %}" class="login-form">
-            {% csrf_token %}
-            <div class="form-group">
-                <div class="button-group">
-                    <button class="faculty-button" type="button">Faculty</button>
-                    <button class="student-button" type="button">Student</button>
-                </div>
+               <!-- <a href="index.html" class="button button1" target="_self">                   
+                        <img src="/static/images/faculty.png" class="img_icon" id="img_faculty">                     
+                </a>
+                <a href="/student" class="button button2" target="_self">
+                        <img src="/static/images/student.png" class="img_icon" id="img_student">                   
+                </a> -->
+                <button id="student" class="button button1"> 
+                    <img src="{% static 'assets/images/images/studentwhite.png' %}" class="img_icon" id="img_student">
+                </button></a>
+                <a href="{% url 'faculty'%}">
+                <button id="faculty" class="button button2"> 
+                    <img src="{% static 'assets/images/images/faculty blue.png' %}" class="img_icon" id="img_faculty">
+                </button></a>
             </div>
-            <div class="form-group">
-                <label for="username">Register Number</label>
-                <input type="text" id="username" name="username" required>
+            <img src="{% static 'assets/images/images/CCE logo.png' %}"  id="logo">
+            <div class="form_box">
+                <h1 style="text-align: left; margin-left: 30px;">Login</h1>
+                <form class="form" method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <input type="text" placeholder="username" id="form_text" name="username" required>
+                    <input type="password" placeholder="password" id="form_pass" name="password" required minlength="3">
+                    <h6 style="color: #FFFBF5; font-size: 15px; margin-top: -30px; margin-bottom: 10px; margin-left: -15px;">forgot password ?</h6>
+                    <button type="submit" id="form_sub">Login</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-        <div class="signup">
-            <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
         </div>
     </div>
-    
 
+
+
+    <script src=""></script>
 </body>
 </html>

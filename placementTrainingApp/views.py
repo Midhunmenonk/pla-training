@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import auth_faculty, auth_student
+from .models import auth_student, auth_faculty
 
 
 # Create your views here.
@@ -19,28 +19,63 @@ def register(request):
          return render(request, 'register.html')
 
 
+
+
 def login(request):
     if request.method == 'POST':
         user_type = request.POST.get('userType') 
-        reg_no = request.POST.get('registerNumber')
+        username = request.POST.get('registerNumber')
         password = request.POST.get('password')
-
+       
+        user=None
         if user_type == 'faculty':
-            user = auth_faculty.objects.filter(reg_no=reg_no, password=password).first()
+            user = auth_faculty.objects.filter(username=username, password=password).first()
         elif user_type == 'student':
-            user = auth_student.objects.filter(reg_no=reg_no, password=password).first()
+            user = auth_student.objects.filter(username=username, password=password).first()
 
         if user:
             user_id = user.id
-            reg_no = user.reg_no
+            username = user.username
             password = user.password
-            request.session['registerNumber'] = reg_no
-            return render(request, 'profile.html')
+            request.session['registerNumber'] = username
+            return render(request, 'percentage.html')
         else:
-            return render(request, 'index.html', {'error_message': 'Invalid credentials'})
+            return render(request, 'login.html', {'error_message': 'Invalid credentials'})
 
     else:
-        return render(request, 'index.html')
+        return render(request, 'login.html')
+    
+def faculty(request):
+    if request.method == 'POST':
+        user_type = request.POST.get('userType') 
+        username = request.POST.get('registerNumber')
+        password = request.POST.get('password')
+       
+        user=None
+        if user_type == 'faculty':
+            user = auth_faculty.objects.filter(username=username, password=password).first()
+        elif user_type == 'student':
+            user = auth_student.objects.filter(username=username, password=password).first()
+
+        if user:
+            user_id = user.id
+            username = user.username
+            password = user.password
+            request.session['registerNumber'] = username
+            return render(request, 'calendar.html')
+        else:
+            return render(request, 'faculty.html', {'error_message': 'Invalid credentials'})
+
+    else:
+        return render(request, 'faculty.html')
+        
+
+
+
+
+        
+    
+
             
             
 def profile(request):
@@ -58,5 +93,6 @@ def feedback(request):
 def percentage(request):
      return render(request, 'percentage.html')
 
-def faculty(request):
-     return render(request, 'faculty.html')
+
+
+
