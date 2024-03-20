@@ -16,19 +16,20 @@
         <div id="half2">
             <h1 class="heading2">TRAINING</h1>
             <div>
-                <a href="{% url 'login' %}">
+                    <a href="{% url 'login'%}">
                     <button id="student" class="button button1"> 
                         <img src="{% static 'assets/images/images/student.png' %}" class="img_icon" id="img_student">
                     </button></a>
-                    <a href="{% url 'faculty'%}">
+                    
                     <button id="faculty" class="button button2"> 
                         <img src="{% static 'assets/images/images/faculty.png' %}" class="img_icon" id="img_faculty">
-                    </button></a>
+                    </button>
             </div>
             <img src="{% static 'assets/images/images/CCE logo.png' %}"  id="logo">
             <div class="form_box">
                 <h1 style="text-align: left; margin-left: 30px;">Login</h1>
-                <form class="form" method="post">
+                <form class="form" method="POST" action="{% url 'faculty' %}" >
+                    {% csrf_token %}
                     <input type="text" placeholder="username" id="form_text" required>
                     <input type="password" placeholder="password" id="form_pass" required minlength="8">
                     <h6 style="color: #FFFBF5; font-size: 15px; margin-top: -30px; margin-bottom: 10px; margin-left: -15px;">forgot password ?</h6>

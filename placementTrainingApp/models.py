@@ -1,11 +1,11 @@
-from django.db import models
+from django.db import models 
 
 class auth_student(models.Model):
-    reg_no = models.CharField(max_length = 20)
+    username = models.CharField(max_length = 20)
     password = models.CharField(max_length = 20)
 
 class auth_faculty(models.Model):
-    reg_no = models.CharField(max_length = 20)
+    username = models.CharField(max_length = 20)
     password = models.CharField(max_length = 20)
 
 
