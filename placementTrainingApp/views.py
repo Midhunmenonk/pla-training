@@ -24,7 +24,7 @@ def register(request):
 def login(request):
     if request.method == 'POST':
         user_type = request.POST.get('userType') 
-        username = request.POST.get('registerNumber')
+        username = request.POST.get('username')
         password = request.POST.get('password')
        
         user=None
@@ -37,10 +37,10 @@ def login(request):
             user_id = user.id
             username = user.username
             password = user.password
-            request.session['registerNumber'] = username
-            return render(request, 'percentage.html')
+            request.session['username'] = username
+            return render(request, 'stud_profile.html')
         else:
-            return render(request, 'login.html', {'error_message': 'Invalid credentials'})
+            return render(request, 'stud_profile.html', {'error_message': 'Invalid credentials'})
 
     else:
         return render(request, 'login.html')
@@ -48,7 +48,7 @@ def login(request):
 def faculty(request):
     if request.method == 'POST':
         user_type = request.POST.get('userType') 
-        username = request.POST.get('registerNumber')
+        username = request.POST.get('username')
         password = request.POST.get('password')
        
         user=None
@@ -61,17 +61,22 @@ def faculty(request):
             user_id = user.id
             username = user.username
             password = user.password
-            request.session['registerNumber'] = username
-            return render(request, 'calendar.html')
+            request.session['username'] = username
+            return render(request, 'fac_profile.html')
         else:
-            return render(request, 'faculty.html', {'error_message': 'Invalid credentials'})
+            return render(request, 'fac_profile.html', {'error_message': 'Invalid credentials'})
 
     else:
         return render(request, 'faculty.html')
         
+def fac_profile(request):
+    return render(request, 'fac_profile.html')
 
+def stud_profile(request):
+    return render(request, 'stud_profile.html')
 
-
+def new_student(request):
+    return render(request, 'new_student.html')
 
         
     
@@ -89,7 +94,6 @@ def calendar(request):
 
 def feedback(request):
      return render(request, 'feedback.html')   
-
 def percentage(request):
      return render(request, 'percentage.html')
 

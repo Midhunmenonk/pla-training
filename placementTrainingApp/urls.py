@@ -14,7 +14,12 @@ urlpatterns = [
     path('feedback/', views.feedback, name = 'feedback'),
     path('percentage/', views.percentage, name = 'percentage'),
     path('faculty/', views.faculty, name = 'faculty'),
+    path('fac_profile/', views.fac_profile, name = 'fac_profile'),
+    path('stud_profile/', views.stud_profile, name = 'stud_profile'),
+    path('new_student/', views.new_student, name = 'new_student'),
 ]
+
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
