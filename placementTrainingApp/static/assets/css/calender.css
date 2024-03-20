@@ -110,7 +110,7 @@ header .current-date{
 .days li:not(.active):hover::before{
   background: #C4CAD1;
 }
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -371,4 +371,6 @@ h2 {
 	text-align: center;
 	padding: 0 110px;
 	margin-bottom: 110px;
-}
+}   */
+
+
