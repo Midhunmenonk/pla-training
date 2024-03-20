@@ -60,7 +60,7 @@ a:hover{
     color: white;
 }
 a:active{
-    color:#C3ACD0;
+    color:white;
 }
 
 ul li {
@@ -102,4 +102,47 @@ ul li,span{
 .personal-details{
     color: #674188;
     font-size: 24px;
+}
+
+/* NEW STUDENT PAGE */
+
+.content1{
+    
+    height:fit-content;
+    margin-left: auto;
+    margin-top: 50px;
+    color:#FFF;
+    
+    margin-left: 600px;
+}
+
+
+.regform{
+    margin-left: 100px;
+    width:45%;
+    height:300px;
+    align-content: center;
+    margin-left: -200px;
+    border-style: solid;
+    margin-top: 100px;
+}
+.heading{
+   text-align: left;
+   color:#674188;
+    font-size: 3em;
+}
+
+label{
+    color:#674188;
+    font-weight: bold;
+    display: block;
+    font-size: 1em;
+    
+}
+input{
+    
+}
+
+input,label{
+    margin-block: -20px;
 }

@@ -1,41 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Student</title>
+    <link rel="stylesheet" href="{% static 'assets/css/fac_profile.css' %}">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> 
     <style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(141, 6, 141);
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #060404;
-    font-size: 3em;
-}
-
-form {
-    width: 70%;
-    margin: 0 auto;
-}
 
 label {
-    font-weight: bold;
-    display: block;
-    font-size: 1.2em; /* Increase font size for labels */
+    /* Increase font size for labels */
 }
 
 input[type="text"],
@@ -70,29 +45,39 @@ button[type="button"]:hover {
     </style>
 </head>
 <body>
-    <h1>Student Details Form</h1>
-    <form method="post" action="{% url 'new_student' %}">
-        {% csrf_token %}
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="regno">Registration Number:</label><br>
-        <input type="text" id="regno" name="regno" required><br><br>
-        
-        <label for="batch">Batch:</label><br>
-        <input type="text" id="batch" name="batch" required><br><br>
+    <div class="navbar">
+        <nav>
+            <img src="{% static 'assets/images/images/nav pic.png' %}" class="navimg">
+            <div class="nav_icons">
+                <ul>
+                   <a href="{% url 'fac_profile'%}"> <li style="margin-top: 150px;"> <span class="material-icons-outlined">home</span>Home</li></a>
+                   <a href="{% url 'new_student' %}"><li><span class="material-icons-outlined">perm_identity</span>New Student</li></a>
+                   <a href="{% url 'attend' %}"> <li><span class="material-icons-outlined">article</span>Attendance</li></a>
+                   <a href="{% url 'calendar' %}"> <li><span class="material-icons-outlined">calendar_month</span>Calendar</li></a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="content1">
+        <h1 class="heading"> New Student Details </h1>
+        <form class="regform" method="post" action="{% url 'new_student' %}">
+            {% csrf_token %}
+            <label  for="name"><h2>Name:</h2></label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="regno"><h2>Registration Number:</h2></label><br>
+            <input type="text" id="regno" name="regno" required><br><br>
+            
+            <label for="batch"><h2>Batch:</h2></label><br>
+            <input type="text" id="batch" name="batch" required><br><br>
 
-        <label for="branch">Branch:</label><br>
-        <input type="text" id="branch" name="branch" required><br><br>
-        
-        <label for="address"> Permanent Address:</label><br>
-        <textarea id="address" name="address" required></textarea><br><br>
-
-        <label for="address">Current Address:</label><br>
-        <textarea id="address" name="address" required></textarea><br><br>
-        
-        <button type="submit">Submit</button>
-        <button type="button">Edit</button>
-    </form>
+            <label for="branch"><h2>Branch:</h2></label><br>
+            <input type="text" id="branch" name="branch" required><br><br>
+            
+            
+            <button type="submit">Submit</button>
+            <button type="button">Edit</button>
+        </form>
+    </div>
 </body>
 </html>
