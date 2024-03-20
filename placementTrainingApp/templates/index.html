@@ -23,13 +23,14 @@
                 <a href="/student" class="button button2" target="_self">
                         <img src="/static/images/student.png" class="img_icon" id="img_student">                   
                 </a> -->
-
+                <a href="{% url 'login'%}">
                 <button id="student" class="button button1"> 
                     <img src="{% static 'assets/images/images/studentwhite.png' %}" class="img_icon" id="img_student">
-                </button>
+                </button></a>
+                <a href="{% url 'faculty'%}">
                 <button id="faculty" class="button button2"> 
                     <img src="{% static 'assets/images/images/faculty blue.png' %}" class="img_icon" id="img_faculty">
-                </button>
+                </button></a>
             </div>
             <img src="{% static 'assets/images/images/CCE logo.png' %}"  id="logo">
             <div class="form_box">

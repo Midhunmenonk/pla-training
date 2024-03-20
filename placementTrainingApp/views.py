@@ -57,3 +57,6 @@ def feedback(request):
 
 def percentage(request):
      return render(request, 'percentage.html')
+
+def faculty(request):
+     return render(request, 'faculty.html')

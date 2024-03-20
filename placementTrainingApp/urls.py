@@ -13,7 +13,7 @@ urlpatterns = [
     path('calendar/', views.calendar, name = 'calendar'),
     path('feedback/', views.feedback, name = 'feedback'),
     path('percentage/', views.percentage, name = 'percentage'),
-
+    path('faculty/', views.faculty, name = 'faculty'),
 ]
 
 if settings.DEBUG:
