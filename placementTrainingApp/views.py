@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import auth_student, auth_faculty
 
 
@@ -27,11 +27,7 @@ def login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
        
-        user=None
-        if user_type == 'faculty':
-            user = auth_faculty.objects.filter(username=username, password=password).first()
-        elif user_type == 'student':
-            user = auth_student.objects.filter(username=username, password=password).first()
+        user = auth_student.objects.filter(username=username, password=password).first()
 
         if user:
             user_id = user.id
@@ -40,7 +36,7 @@ def login(request):
             request.session['username'] = username
             return render(request, 'stud_profile.html')
         else:
-            return render(request, 'stud_profile.html', {'error_message': 'Invalid credentials'})
+            return render(request, 'login.html', {'error_message': 'Invalid credentials'})
 
     else:
         return render(request, 'login.html')
@@ -51,12 +47,7 @@ def faculty(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
        
-        user=None
-        if user_type == 'faculty':
-            user = auth_faculty.objects.filter(username=username, password=password).first()
-        elif user_type == 'student':
-            user = auth_student.objects.filter(username=username, password=password).first()
-
+        user = auth_faculty.objects.filter(username=username, password=password).first()
         if user:
             user_id = user.id
             username = user.username
@@ -64,7 +55,7 @@ def faculty(request):
             request.session['username'] = username
             return render(request, 'fac_profile.html')
         else:
-            return render(request, 'fac_profile.html', {'error_message': 'Invalid credentials'})
+            return render(request,  {'error_message': 'Invalid credentials'})
 
     else:
         return render(request, 'faculty.html')

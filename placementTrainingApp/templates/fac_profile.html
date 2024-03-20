@@ -12,19 +12,19 @@
 <body>
     <div class="navbar">
         <nav>
-            <img src="/placementTrainingApp/static/assets/images/images/nav pic.png" class="navimg">
+            <img src="{% static 'assets/images/images/nav pic.png' %}" class="navimg">
             <div class="nav_icons">
                 <ul>
-                   <a href=""> <li style="margin-top: 150px;"> <span class="material-icons-outlined">home</span>Home</li></a>
-                   <a href=""> <li><span class="material-icons-outlined">perm_identity</span>New Student</li></a>
-                   <a href=""> <li><span class="material-icons-outlined">article</span>Attendance</li></a>
-                   <a href=""> <li><span class="material-icons-outlined">calendar_month</span>Calendar</li></a>
+                   <a href="{% url 'stud_profile'%}"> <li style="margin-top: 150px;"> <span class="material-icons-outlined">home</span>Home</li></a>
+                   <a href="{% url 'new_student' %}"><li><span class="material-icons-outlined">perm_identity</span>New Student</li></a>
+                   <a href="{% url 'attend' %}"> <li><span class="material-icons-outlined">article</span>Attendance</li></a>
+                   <a href="{% url 'calendar' %}"> <li><span class="material-icons-outlined">calendar_month</span>Calendar</li></a>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="content">
-        <img src="/placementTrainingApp/static/assets/images/images/stud_pic.png">
+        <img src="{% static '/assets/images/images/stud_pic.png' %}">
         <div class="personal-details">
             <h2>Personal Details:</h2>
             <p>Name: Someone</p>
